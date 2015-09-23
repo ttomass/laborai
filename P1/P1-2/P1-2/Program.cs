@@ -22,10 +22,14 @@ namespace salygos_sakinys
             kiekisEiluteje = int.Parse(Console.ReadLine());
             Console.Write("Įveskite spausdinamą simbolį: ");
             simbolis = (char) Console.Read();
-            for (int i = 1; i <= bendrasKiekis; i++)
-                if (i % kiekisEiluteje == 0) Console.WriteLine(simbolis);
-                else Console.Write(simbolis);
-            Console.WriteLine("");
+            for (int i = 1; i <= bendrasKiekis/kiekisEiluteje; i++)
+            {
+                for (int j = 1; j <= kiekisEiluteje; j++)
+                {
+                    Console.Write(simbolis);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
