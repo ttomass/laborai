@@ -13,17 +13,21 @@ namespace funkcijos_reiksmes
     {
         static void Main(string[] args)
         {
-            double fx;
-            int z;
-            Console.Write("Įveskite z reikšmę: ");
-            z = int.Parse(Console.ReadLine());
-            if (z - 1 >= 0)
+            double fxy;
+            int x, y;
+
+            Console.Write("Įveskite x reikšmę: ");
+            x = int.Parse(Console.ReadLine());
+            Console.Write("Įveskite y reikšmę: ");
+            y = int.Parse(Console.ReadLine());
+
+            if ( Math.Pow(x, 3) - y != 0)
             {
-                fx = Math.Pow(z - 1, 0.5); // Matematinių funkcijų klasė
-                Console.WriteLine(" z = {0} f(x) = {1,8:f3}", z, fx);
+                fxy = (Math.Pow(y, 2) - 2*y*x + Math.Pow(x, 2))/(Math.Pow(x, 3) - y); // Matematinių funkcijų klasė
+                Console.WriteLine(" x = {0}, y = {1} f(x) = {2 ,8:f3}", x, y, fxy);
             }
             else
-                Console.WriteLine(" z = {0} f-ja neegzistuoja", z);
+                Console.WriteLine(" x = {0}, y = {1} f-ja neegzistuoja", x, y);
         }
     }
 }
