@@ -11,11 +11,22 @@ namespace ciklas
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Skaičiai nuo 5 iki 15 ir jų kvadratai:");
-            for (int i = 5; i <= 15; i++)
-                Console.WriteLine(" {0,3:d} {1,5:d} {2,7:d}", i, i * i, i*i*i);
+            int a;
+            int b;
+            int kartai = 0;
+            Console.Write("Įveskite sveikąją a reikšmę: ");
+            a = int.Parse(Console.ReadLine());
+            Console.Write("Įveskite sveikąją b reikšmę: ");
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Skaičiai nuo {0} iki {1} ir jų kvadratai:", a, b);
+            for (int i = a; i <= b; i++)
+            {
+                Console.WriteLine(" {0,3:d} {1,5:d} {2,7:d}", i, i*i, i*i*i);
+                kartai++;
+            }
+            Console.WriteLine("Programa vyko {0} kartų", kartai);
         }
     }
 }
