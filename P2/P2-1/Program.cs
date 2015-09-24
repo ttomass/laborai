@@ -27,13 +27,12 @@ namespace P2_1
 
         static int SkaiciuotiPlytomis(Plyta plyta, Siena siena)
         {
-            int plytosTuris, sienaPlytomis, viso;
+            int plytosTuris, sienaPlytomis;
             double sienosTuris;
             sienosTuris = siena.GautiAukstiMilimetrais()*siena.GautiIlgiMilimetrais();
             plytosTuris = plyta.GautiAuksti()*plyta.GautiIlgi();
             sienaPlytomis = (int) (sienosTuris/plytosTuris);
-            viso = sienaPlytomis;
-            return viso;
+            return sienaPlytomis;
         }
     }
 }
