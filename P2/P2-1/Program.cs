@@ -12,21 +12,27 @@ namespace P2_1
         {
             Plyta plyta1 = new Plyta(250, 120, 88);
             Plyta plyta2 = new Plyta(240, 115, 71);
-            Plyta plyta3 = new Plyta(240, 115, 61);
-            Siena siena = new Siena(12, 0.23, 3);
-            Console.WriteLine("Į sieną pirmo tipo plytų telpa: {0}", SkaiciuotiPlytomis(plyta1, siena));
-            Console.WriteLine("Į sieną antro tipo plytų telpa: {0}", SkaiciuotiPlytomis(plyta2, siena));
-            Console.WriteLine("Į sieną trečio tipo plytų telpa: {0}", SkaiciuotiPlytomis(plyta3, siena));
+            Siena siena1 = new Siena(12, 0.25, 3);
+            Siena siena2 = new Siena(14, 0.25, 4);
+            Siena siena3 = new Siena(10, 0.25, 2);
+            Siena siena4 = new Siena(13, 0.25, 5);
+
+            int pirmoTipoPlytos = SkaiciuotiPlytomis(plyta1, siena1) + SkaiciuotiPlytomis(plyta1, siena2) +
+                                  SkaiciuotiPlytomis(plyta1, siena3) + SkaiciuotiPlytomis(plyta1, siena4);
+            int antroTipoPlytos = SkaiciuotiPlytomis(plyta2, siena1) + SkaiciuotiPlytomis(plyta2, siena2) +
+                      SkaiciuotiPlytomis(plyta2, siena3) + SkaiciuotiPlytomis(plyta2, siena4);
+            Console.WriteLine("Iš viso pirmo tipo plytų reiks: {0}", pirmoTipoPlytos);
+            Console.WriteLine("Iš viso antro tipo plytų reiks: {0}", antroTipoPlytos);
         }
 
         static int SkaiciuotiPlytomis(Plyta plyta, Siena siena)
         {
             int plytosTuris, sienaPlytomis, viso;
             double sienosTuris;
-            sienosTuris = siena.GautiAukstiMilimetrais()*siena.GautiIlgiMilimetrais()*siena.GautiPlotiMilimetrais();
-            plytosTuris = plyta.GautiAuksti()*plyta.GautiIlgi()*plyta.GautiPloti();
+            sienosTuris = siena.GautiAukstiMilimetrais()*siena.GautiIlgiMilimetrais();
+            plytosTuris = plyta.GautiAuksti()*plyta.GautiIlgi();
             sienaPlytomis = (int) (sienosTuris/plytosTuris);
-            viso = 4*sienaPlytomis;
+            viso = sienaPlytomis;
             return viso;
         }
     }
